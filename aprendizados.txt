@@ -1,0 +1,37 @@
+Conceitos que a gente conseguiu ver
+
+- como funciona a infraestrutura para que o SpringBoot consiga gerenciar nossa aplicação
+	servlet, tabela que mapeia URL a classes/métodos
+
+- onde que a gente tem que focar esforços
+	definir os controllers, os serviços, os models/dtos, os repositórios
+
+- o que é efetivamente um Repositório
+	uma abstração para um elemento de armazenamento de dados
+		-  memória, arquivo, CSV, Base Relacional, Base Relacional em memória, Base Não relacional
+
+- hierarquia de classes
+	- reaproveitamento de estruturas
+	- classes abstratas
+		- referenciar um monte de diferentes tipos da mesma forma (e única)
+		- criar "compromissos de implementação" para que as classes derivadas se obriguem a definir lógica para algum método específico
+			exemplo: calcularSalario
+
+- interfaces
+	- mesma chamada
+	- muitas implementações diferentes
+		- posso ter várias implementações de serviços de uma mesma interface?
+			posso!
+			porém vai dar conflito
+			pra saber aquela que "vale", usamos o @Primary
+			
+- DTO
+	- para que? pra poder converter o que a gente armazena para algo que a getne queira exibir de determinado jeito
+	
+	
+Quero começar uma API do Zero
+- entendo o "caminho do dado" desde a sua recuperação até sua exibição?
+	- preciso recuperar os dados - Vou precisar de um Repositório
+	- os dados recuperados precisam estar em algum formato - Preciso de model/entity
+	- posso fazer tratamentos nesses dados? Ordenar, Filtrar, etc? - Preciso de camadas de serviços
+	- preciso disponibilizar estes dados para alguém na internet acessar - Controllers				
